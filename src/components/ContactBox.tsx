@@ -1,22 +1,18 @@
-import React from 'react';
+import React from "react";
 import { contactData } from "../redux/actionReducer";
 
-const ContactBox: React.FC<contactData> = ( {contactRecord} ) => {
-    
-    return (
-      <div>
-        <p>Name: {contactRecord.firstName}</p>
-        <p>Email: {contactRecord.lastName}</p>
-        <p>Phone: {contactRecord.status}</p>
-      </div>
-    );
-  }
-  
-  export default ContactBox;
-  
-  
-  
-  
-  
-  
-  
+interface contactDataProps {
+  contactRecord: contactData;
+}
+
+const ContactBox: React.FC<contactDataProps> = ({ contactRecord }) => {
+  return (
+    <div >
+      <p>FirstName: {contactRecord.firstName}</p>
+      <p>LastName: {contactRecord.lastName}</p>
+      <p>Status: {contactRecord.status?"active":"inactive"}</p>
+    </div>
+  );
+};
+
+export default ContactBox;

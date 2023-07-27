@@ -1,7 +1,7 @@
 export interface contactData {
     firstName:string,
     lastName:string,
-    status:boolean,
+    status:string,
 }
 
 interface contactRecordType {
@@ -14,7 +14,18 @@ interface actionType {
 }
 
 const INITIAL_STATE:contactRecordType = {
-    contactRecords:[]
+    contactRecords:[
+        {
+            firstName:"Sonam",
+            lastName:"Murarkar",
+            status:""
+        },
+        {
+            firstName:"Bittu",
+            lastName:"Mondal",
+            status:""
+        }
+    ]
 } 
 
 export const actionReducer = (state=INITIAL_STATE,action:actionType)=>{

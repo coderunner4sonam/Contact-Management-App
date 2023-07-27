@@ -1,39 +1,10 @@
-// import React from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Header from "./components/Header";
-// import contactsStore from "./pages/contactsStore";
-// import ChartsMaps from "./pages/ChartsMaps";
-// import { useDispatch, useSelector } from "react-redux";
-// // import {state} from "./redux/actionReducer"
-// function App() {
-//   const store = useSelector((state) => state);
-
-//   return (
-//     <BrowserRouter>
-//       <div className="App">
-//         <Header />
-//         <div style={{display:"flex",flexDirection:"row"}}>
-//           <div>{/* <Sidebar/> */}</div>
-//           <div>
-//             <Routes>
-//               <Route path="/" element={<contactsStore />} />
-//               <Route path="/chartsmaps" element={<ChartsMaps />} />
-//             </Routes>
-//           </div>
-//         </div>
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-// ______________________________________
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Contacts from "./pages/Contacts";
 import ChartsMaps from "./pages/ChartsMaps";
-
+import Sidebar from "./components/Sidebar";
+import CreateContact from "./pages/CreateContact";
 
 function App(): JSX.Element {
  
@@ -42,13 +13,17 @@ function App(): JSX.Element {
       <div className="App">
         <Header />
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <div>{/* <Sidebar/> */}</div>
-          <div>
+          <div style={{width:"15%", border:"1px solid black",height:"89vh",backgroundColor:"#FFFFFF"}}>
+            <Sidebar/>
+          </div>
+          <div style={{width:"85%", border:"1px solid #3C3CF6",height:"89vh",backgroundColor:"#ECE9E4"}}>
             <Routes>
               <Route path="/" element={<Contacts />} />
               <Route path="/chartsmaps" element={<ChartsMaps />} />
+              <Route path="/createcontact" element={<CreateContact/>} />
             </Routes>
           </div>
+
         </div>
       </div>
     </BrowserRouter>
