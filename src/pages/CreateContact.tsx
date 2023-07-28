@@ -30,16 +30,16 @@ const CreateContact:React.FC = () => {
   }
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>   
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', border:"1px solid black" }}>   
       <div>
-        <div style={{border:"1px solid black", backgroundColor:"white", width:"30vw",height:"60vh",textAlign:"center"}}>
+        <div style={{border:"1px solid black", backgroundColor:"white", width:"30vw",height:"60vh",textAlign:"center",borderRadius:"5px"}}>
             <div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center"}}>
               <label><h3>FirstName: </h3></label>
-              <input  style={{height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}}type="text" placeholder=' please enter firstName' onChange={(e)=>setDataContact({...dataContact, firstName:e.target.value})}/>
+              <input  style={{borderRadius:"4px",height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}}type="text" placeholder=' please enter firstName' onChange={(e)=>setDataContact({...dataContact, firstName:e.target.value})}/>
             </div>
             <div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center"}}>
               <label><h3>LastName: </h3></label>
-              <input style={{height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}} type="text" placeholder=' please enter lastName' onChange={(e)=>setDataContact({...dataContact, lastName:e.target.value })}/>
+              <input style={{borderRadius:"4px",height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}} type="text" placeholder=' please enter lastName' onChange={(e)=>setDataContact({...dataContact, lastName:e.target.value })}/>
             </div>
             <div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center"}}>
                 <label><h3>Status: </h3></label> 
@@ -58,7 +58,8 @@ const CreateContact:React.FC = () => {
             </div>
         </div>
         <div style={{display:"flex", justifyContent: 'center', alignItems: 'center',marginTop:"12px"}}>
-          <button style={{backgroundColor:"#CCCCCC"}} onClick={handleContactData} >Save Contact</button>
+          <button style={{backgroundColor:"#CCCCCC",color:"black", height:"40px",width:"150px",borderRadius:"5px" }} onClick={handleContactData} >
+            <b>Save Contact</b></button>
         </div>
       </div>
      

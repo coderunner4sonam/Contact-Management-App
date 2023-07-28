@@ -21,8 +21,8 @@ const INITIAL_STATE:contactRecordType = {
             status:"active"
         },
         {
-            firstName:"Bittu",
-            lastName:"Mondal",
+            firstName:"Sonal",
+            lastName:"Kotangale",
             status:"inactive"
         }
     ]

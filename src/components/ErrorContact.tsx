@@ -1,17 +1,22 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
-const ErrorContact:React.FC = () => {
+const ErrorContact: React.FC = () => {
   return (
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center", border:"0.5px solid black",cursor:"pointer",color:"#3C3CF6",height:"100%" }}>
-     {/* <FontAwesomeIcon icon="fa-solid fa-cross" /> */}
-     <div style={{ border:"0.5px solid black",cursor:"pointer",color:"#3C3CF6",width:"40%",alignItems:"center",textAlign:"center" }}>
-      <p>No contact found</p> 
-      <p>Please add contact form</p>
-      <p>Create a contact button</p>
-      </div>
-    </div>
-  )
-}
+    <div style={{marginTop:"8%",display: 'flex', justifyContent: 'center',   alignItems: 'center', cursor: 'pointer',  color: '#3C3CF6',
+      height: '100%' }} >
+      
+        {/* <FontAwesomeIcon icon={faX} /> */}
 
-export default ErrorContact
+        <div style={{ display: 'flex',flexDirection: 'column',border: '2px solid black',cursor: 'pointer', width: '40%',
+            textAlign: 'center', color:"black",borderRadius:"5px"}}>
+          <p><b>No contact found</b></p>
+          <p><b>Please add contact form</b></p>
+          <p><b>Create a contact button</b></p>
+        </div>
+    </div>
+  );
+};
+
+export default ErrorContact;
