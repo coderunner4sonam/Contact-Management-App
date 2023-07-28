@@ -1,34 +1,3 @@
-// import React from "react";
-// import { contactData } from "../redux/actionReducer";
-// import { useNavigate } from "react-router-dom";
-// import { DELETE_CONTACT} from "../redux/actionType";
-// import { useDispatch } from "react-redux";
-
-// interface contactDataProps {
-//   index: number,
-//   editedRecords: contactData
-// }
-
-// const ContactBox: React.FC<contactDataProps> = ({ index,editedRecords}) => {
-//   const NAVIGATE = useNavigate();
-//   const DISPATCH = useDispatch()
-//   const payloadData:contactDataProps={
-//     index,editedRecords
-//   }
-
-//   return (
-//     <div >
-//       <p>FirstName: {editedRecords.firstName}</p>
-//       <p>LastName: {editedRecords.lastName}</p>
-//       <p>Status: {editedRecords.status?"active":"inactive"}</p>
-//       <button onClick={()=>NAVIGATE(`/${index}`)}>Edit</button>
-//       <button onClick={()=>DISPATCH(DELETE_CONTACT(index))}>Delete</button>
-//     </div>
-//   );
-// };
-
-// export default ContactBox;
-
 import React from "react";
 import { contactData } from "../redux/actionReducer";
 import { useNavigate } from "react-router-dom";
@@ -39,6 +8,14 @@ interface contactDataProps {
   index: number;
   editedRecords: contactData;
 }
+
+// ContactBox Component renders a box with contact information and two buttons: "Edit" and "Delete." 
+// The component takes two props: 1.index: A number representing the index of the contact in the array.
+// 2.editedRecords: An object representing the contact's data with properties like firstName, lastName, and status.
+// The component uses React Router's useNavigate hook for navigation & React Redux's useDispatch hook to dispatch actions. 
+// When the "Edit" button is clicked, it navigates to a specific URL based on the contact's index for editing purposes. 
+// When the "Delete" button is clicked, it dispatches a Redux action with the DELETE_CONTACT action type and the contact's index as the payload, 
+// presumably to delete the contact from the application state.
 
 const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
   const NAVIGATE = useNavigate();

@@ -3,7 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import  {contactData}  from '../redux/actionReducer'
 import { useDispatch } from 'react-redux'
 import { CREATE_CONTACT } from '../redux/actionType'
-      
+
+// The CreateContact component is represents a page to create a new contact.
+// It allows the user to input the contact's first name, last name, and status (active or inactive) using text inputs and radio buttons.
+// The user can then save the contact by clicking the "Save Contact" button.
+
 const CreateContact:React.FC = () => {
   const NAVIGATE = useNavigate();
   const DISPATCH = useDispatch();

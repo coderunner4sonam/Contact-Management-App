@@ -7,6 +7,9 @@ import Sidebar from "./components/Sidebar";
 import CreateContact from "./pages/CreateContact";
 import EditContact from "./pages/EditContact";
 
+// The App component is the main component of the React application
+// It sets up the routing for different pages and displays a header, sidebar, and content area for different routes.
+
 function App(): JSX.Element {
  
   return (
@@ -25,7 +28,6 @@ function App(): JSX.Element {
               <Route path="/:id"  element={<EditContact/>} />
             </Routes>
           </div>
-
         </div>
       </div>
     </BrowserRouter>

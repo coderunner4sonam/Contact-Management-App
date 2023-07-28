@@ -6,6 +6,10 @@ import { contactData } from '../redux/actionReducer';
 import { EDIT_CONTACT } from '../redux/actionType';
 import {EditPayloadType} from "../redux/actionType"
 
+// The EditContact component is represents a page to edit an existing contact. 
+// It allows the user to modify the contact's first name, last name, and status (active or inactive) using text inputs 
+// and radio buttons. The user can then save the edited contact by clicking the "Edit Contact" button.
+  
 const EditContact:React.FC = () => {
     const {id} = useParams();
     const contactsStore = useSelector((state: RootState) => state);

@@ -1,3 +1,5 @@
+// a Redux store is created using the createStore function from Redux.
+// The store is initialized with the actionReducer function, which is responsible for managing the state of the application.
 
 import { createStore } from "redux";
 import { actionReducer } from "./actionReducer";

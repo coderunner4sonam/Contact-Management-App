@@ -1,3 +1,8 @@
+// this code sets up a Redux store with a reducer to manage contact records. 
+// The reducer handles actions to create, edit, and delete contacts 
+//  it maintains the state containing an array of contact objects.
+// The state is initialized with two sample contacts.
+
 export interface contactData {
     firstName:string,
     lastName:string,

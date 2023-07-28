@@ -1,5 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+  
+// the Sidebar component is use to navigate between 
+// the "Contact" page and the "Chats and Maps" page in the application using the React Router's useNavigate hook.
+// It consists of two clickable sections, each displaying a title, and when clicked, 
+// it uses the useNavigate hook from React Router to navigate to different pages.
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
