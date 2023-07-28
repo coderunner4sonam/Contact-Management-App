@@ -1,10 +1,13 @@
 import React from 'react'
-import Dashboard from '../components/Dashboard'
+import CovidDashboard from '../components/CovidDashboard'
+import { LatLngExpression } from 'leaflet';
 
 const ChartsMaps:React.FC = () => {
+  const center: LatLngExpression = [51.505, -0.09];
   return (
     <div>
-      {/* <Dashboard/> */}
+      <CovidDashboard/>
+  
     </div>
   )
 }

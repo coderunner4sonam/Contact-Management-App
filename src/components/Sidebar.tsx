@@ -12,10 +12,10 @@ const Sidebar: React.FC = () => {
   return (
     <div>
       <div style={{display:"flex",justifyContent:"center", alignItems:"center", border:"0.5px solid black",cursor:"pointer",color:"#3C3CF6"   }}>
-        <h3 onClick={()=>navigate("/")}>Contact</h3>
+        <h4 onClick={()=>navigate("/")}>Contact</h4>
       </div>
       <div style={{display:"flex",justifyContent:"center", alignItems:"center", border:"0.5px solid black",cursor:"pointer",color:"#3C3CF6"  }}>
-        <h3 onClick={()=>navigate("/chartsmaps")}>Chats and Maps</h3>
+        <h4 onClick={()=>navigate("/chartsmaps")}>Chats and Maps</h4>
       </div>
     </div>
   );

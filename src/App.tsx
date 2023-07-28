@@ -11,7 +11,7 @@ import EditContact from "./pages/EditContact";
 // It sets up the routing for different pages and displays a header, sidebar, and content area for different routes.
 
 function App(): JSX.Element {
- 
+
   return (
     <BrowserRouter>
       <div className="App">

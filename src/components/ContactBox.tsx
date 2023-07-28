@@ -15,7 +15,7 @@ interface contactDataProps {
 // The component uses React Router's useNavigate hook for navigation & React Redux's useDispatch hook to dispatch actions. 
 // When the "Edit" button is clicked, it navigates to a specific URL based on the contact's index for editing purposes. 
 // When the "Delete" button is clicked, it dispatches a Redux action with the DELETE_CONTACT action type and the contact's index as the payload, 
-// presumably to delete the contact from the application state.
+// to delete the contact from the application state.
 
 const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
   const NAVIGATE = useNavigate();
@@ -30,7 +30,7 @@ const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
         padding: "10px",
         marginBottom: "10px",
         backgroundColor: "#F3F3F3",
-        width: "calc(33.33% - 20px)", // Three cards in one row with some spacing between them
+        width: "calc(23.33% - 20px)", // Three cards in one row with some spacing between them
         margin: "10px",
         display: "inline-block", // Display the cards inline
       }}
@@ -44,11 +44,11 @@ const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
       <p>
         <strong>Status:</strong> {editedRecords.status ? "active" : "inactive"}
       </p>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <button style={{color:"white", height:"40px",width:"80px",borderRadius:"5px" ,backgroundColor: "#97BE7B", marginRight: "10px" }} onClick={() => NAVIGATE(`/${index}`)}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <button style={{ color: "white", height: "40px", width: "80px", borderRadius: "5px", backgroundColor: "#97BE7B", marginBottom: "10px" }} onClick={() => NAVIGATE(`/${index}`)}>
           Edit
         </button>
-        <button style={{color:"white", height:"40px",width:"80px",borderRadius:"5px" ,backgroundColor: "#D09393" }} onClick={() => DISPATCH(DELETE_CONTACT(index))}>
+        <button style={{ color: "white", height: "40px", width: "80px", borderRadius: "5px", backgroundColor: "#D09393" }} onClick={() => DISPATCH(DELETE_CONTACT(index))}>
           Delete
         </button>
       </div>
@@ -57,3 +57,4 @@ const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
 };
 
 export default ContactBox;
+
