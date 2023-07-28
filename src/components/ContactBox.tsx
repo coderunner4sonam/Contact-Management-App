@@ -1,16 +1,27 @@
 import React from "react";
 import { contactData } from "../redux/actionReducer";
+import { useNavigate } from "react-router-dom";
+import { EDIT_CONTACT } from "../redux/actionType";
 
 interface contactDataProps {
-  contactRecord: contactData;
+  index: number,
+  editedRecords: contactData
 }
 
-const ContactBox: React.FC<contactDataProps> = ({ contactRecord }) => {
+const ContactBox: React.FC<contactDataProps> = ({ index,editedRecords}) => {
+  const NAVIGATE = useNavigate()
+  const payloadData:contactDataProps={
+    index,editedRecords
+  }
+
   return (
     <div >
-      <p>FirstName: {contactRecord.firstName}</p>
-      <p>LastName: {contactRecord.lastName}</p>
-      <p>Status: {contactRecord.status?"active":"inactive"}</p>
+      <p>FirstName: {editedRecords.firstName}</p>
+      <p>LastName: {editedRecords.lastName}</p>
+      <p>Status: {editedRecords.status?"active":"inactive"}</p>
+      {/* <button onClick={()=>DISPATCH(EDIT_CONTACT(payloadData))}>Edit</button> */}
+      <button onClick={()=>NAVIGATE(`/${index}`)}>Edit</button>
+      <button>Delete</button>
     </div>
   );
 };

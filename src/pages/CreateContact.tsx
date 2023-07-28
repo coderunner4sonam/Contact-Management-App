@@ -1,29 +1,32 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { contactData } from '../redux/actionReducer'
+import  {contactData}  from '../redux/actionReducer'
 import { useDispatch } from 'react-redux'
 import { CREATE_CONTACT } from '../redux/actionType'
       
 const CreateContact:React.FC = () => {
-  const DISPATCH = useDispatch();
   const NAVIGATE = useNavigate();
+  const DISPATCH = useDispatch();
+  
 
-  const [contactData,setContactData] = useState<contactData>({
+  const [ dataContact,setDataContact] = useState<contactData>({
     firstName:"",
     lastName:"",
     status:""
   })
 
   const handleStatusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setContactData({
-      ...contactData,
+    setDataContact({
+      ...dataContact,
       status: e.target.value,
     });
 
   };
   function handleContactData() {
-    DISPATCH(CREATE_CONTACT(contactData));
-    NAVIGATE("/createcontact")
+    console.log("function called")
+    DISPATCH(CREATE_CONTACT(dataContact));
+    console.log(dataContact)
+    NAVIGATE("/")
   }
 
   return (
@@ -32,23 +35,23 @@ const CreateContact:React.FC = () => {
         <div style={{border:"1px solid black", backgroundColor:"white", width:"30vw",height:"60vh",textAlign:"center"}}>
             <div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center"}}>
               <label><h3>FirstName: </h3></label>
-              <input  style={{height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}}type="text" placeholder=' please enter firstName' onChange={(e)=>setContactData({...contactData, firstName:e.target.value})}/>
+              <input  style={{height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}}type="text" placeholder=' please enter firstName' onChange={(e)=>setDataContact({...dataContact, firstName:e.target.value})}/>
             </div>
             <div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center"}}>
               <label><h3>LastName: </h3></label>
-              <input style={{height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}} type="text" placeholder=' please enter lastName' onChange={(e)=>setContactData({...contactData, lastName:e.target.value })}/>
+              <input style={{height:"35px", border:"1px solid black",width:"200px",marginLeft:"10px"}} type="text" placeholder=' please enter lastName' onChange={(e)=>setDataContact({...dataContact, lastName:e.target.value })}/>
             </div>
             <div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center"}}>
                 <label><h3>Status: </h3></label> 
                 <div>
                   <label>  
-                    <input type='radio' name="option" value="active" checked={contactData.status === "active"}
+                    <input type='radio' name="option" value="active" checked={dataContact.status === "active"}
                       onChange={handleStatusChange}/> Active 
                   </label>
                 </div>
                 <div>
                   <label>  
-                    <input type='radio' name="option" value="inactive" checked={contactData.status === 'inactive'}
+                    <input type='radio' name="option" value="inactive" checked={dataContact.status === 'inactive'}
                   onChange={handleStatusChange}/> Inactive 
                   </label>
                 </div>

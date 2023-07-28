@@ -5,6 +5,7 @@ import Contacts from "./pages/Contacts";
 import ChartsMaps from "./pages/ChartsMaps";
 import Sidebar from "./components/Sidebar";
 import CreateContact from "./pages/CreateContact";
+import EditContact from "./pages/EditContact";
 
 function App(): JSX.Element {
  
@@ -21,6 +22,7 @@ function App(): JSX.Element {
               <Route path="/" element={<Contacts />} />
               <Route path="/chartsmaps" element={<ChartsMaps />} />
               <Route path="/createcontact" element={<CreateContact/>} />
+              <Route path="/:id"  element={<EditContact/>} />
             </Routes>
           </div>
 

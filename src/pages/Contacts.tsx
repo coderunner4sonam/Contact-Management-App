@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-import {
-  DELETE_CONTACT,
-  EDIT_CONTACT,
-  CREATE_CONTACT,
-} from "../redux/actionType";
+import React from "react";
 import { contactData } from "../redux/actionReducer";
 import { RootState } from "../redux/store"; // Assuming you have defined RootState type in "./redux/store"
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +21,7 @@ const Contacts: React.FC = () => {
       <ErrorContact/> 
       :  
       contactsStore.contactRecords.map((element:contactData, index:number)=>(
-        <ContactBox contactRecord={element}/>
+        <ContactBox editedRecords={element} index={index}/>
       ))
       }
     </div>

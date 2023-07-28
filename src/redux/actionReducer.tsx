@@ -18,12 +18,12 @@ const INITIAL_STATE:contactRecordType = {
         {
             firstName:"Sonam",
             lastName:"Murarkar",
-            status:""
+            status:"active"
         },
         {
             firstName:"Bittu",
             lastName:"Mondal",
-            status:""
+            status:"inactive"
         }
     ]
 } 

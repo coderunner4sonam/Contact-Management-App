@@ -1,5 +1,10 @@
 import {contactData} from "./actionReducer"
 
+export interface EditPayloadType {
+    index: number,
+    editedRecords: contactData
+}
+
 export const CREATE_CONTACT=(payload:contactData)=>{
     return {
         type:"CREATE_CONTACT",
@@ -7,7 +12,7 @@ export const CREATE_CONTACT=(payload:contactData)=>{
     }
 }
 
-export const EDIT_CONTACT=(payload:contactData)=>{
+export const EDIT_CONTACT=(payload:EditPayloadType)=>{
     return {
         type:"EDIT_CONTACT",
         payload
