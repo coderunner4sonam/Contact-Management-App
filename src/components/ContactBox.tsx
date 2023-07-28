@@ -10,24 +10,19 @@ interface contactDataProps {
 }
 
 const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
-  // Use the useNavigate hook from React Router to enable navigation
   const NAVIGATE = useNavigate();
-
-  // Use the useDispatch hook from React Redux to dispatch actions
   const DISPATCH = useDispatch();
 
   return (
-    <div style={{ width: "40%" }}>
+    <div style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}>
       {/* Contact information box */}
       <div
         style={{
-          marginTop: "5%",
           borderRadius: "5px",
           border: "2px solid black",
           padding: "10px",
           marginBottom: "5px",
           backgroundColor: "#F3F3F3",
-          margin: "10px",
           textAlign: "center",
           height: "150px",
         }}
@@ -46,16 +41,16 @@ const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
         </p>
       </div>
       {/* Buttons for editing and deleting the contact */}
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         {/* Edit button */}
         <button
           style={{
+            flex: 1,
             color: "white",
             height: "40px",
-            width: "80px",
             borderRadius: "5px",
             backgroundColor: "#97BE7B",
-            marginBottom: "5px",
+            marginRight: "5px",
           }}
           // When the "Edit" button is clicked, navigate to the edit page for the contact
           onClick={() => NAVIGATE(`/${index}`)}
@@ -65,11 +60,12 @@ const ContactBox: React.FC<contactDataProps> = ({ index, editedRecords }) => {
         {/* Delete button */}
         <button
           style={{
+            flex: 1,
             color: "white",
             height: "40px",
-            width: "80px",
             borderRadius: "5px",
             backgroundColor: "#D09393",
+            marginLeft: "5px",
           }}
           // When the "Delete" button is clicked, dispatch the DELETE_CONTACT action with the contact's index as the payload
           onClick={() => DISPATCH(DELETE_CONTACT(index))}

@@ -47,17 +47,17 @@ const EditContact: React.FC = () => {
   }
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <div>
-        <div style={{ border: '1px solid black', backgroundColor: 'white', width: '30vw', height: '60vh', textAlign: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',flexDirection:"column" }}>
+      <div style={{ width: '90%', maxWidth: '350px' }}>
+        <div style={{ border: '1px solid black', backgroundColor: 'white', textAlign: 'center', padding: '20px',marginBottom:"20px",borderRadius: '5px' }}>
           {/* Input fields for First Name */}
-          <div style={{ height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ marginBottom: '20px' }}>
             <label>
               <h3>FirstName: </h3>
             </label>
             <input
               value={dataContact.firstName}
-              style={{ height: '35px', border: '1px solid black', width: '200px', marginLeft: '10px' }}
+              style={{ height: '35px', border: '1px solid black', width: '100%', marginTop: '5px',borderRadius: '5px' }}
               type="text"
               placeholder="Please enter firstName"
               onChange={(e) => setDataContact({ ...dataContact, firstName: e.target.value })}
@@ -65,13 +65,13 @@ const EditContact: React.FC = () => {
           </div>
 
           {/* Input fields for Last Name */}
-          <div style={{ height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ marginBottom: '20px' }}>
             <label>
               <h3>LastName: </h3>
             </label>
             <input
               value={dataContact.lastName}
-              style={{ height: '35px', border: '1px solid black', width: '200px', marginLeft: '10px' }}
+              style={{ height: '35px', border: '1px solid black', width: '100%', marginTop: '5px',borderRadius: '5px' }}
               type="text"
               placeholder="Please enter lastName"
               onChange={(e) => setDataContact({ ...dataContact, lastName: e.target.value })}
@@ -79,29 +79,29 @@ const EditContact: React.FC = () => {
           </div>
 
           {/* Radio buttons for Status */}
-          <div style={{ height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
             <label>
               <h3>Status: </h3>
             </label>
-            <div>
-              <label>
-                <input type="radio" name="option" value="active" checked={dataContact.status === 'active'} onChange={handleStatusChange} /> Active
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="radio" name="option" value="inactive" checked={dataContact.status === 'inactive'} onChange={handleStatusChange} /> Inactive
-              </label>
-            </div>
+            <label style={{ marginBottom: '10px' }}>
+              <input type="radio" name="option" value="active" checked={dataContact.status === 'active'} onChange={handleStatusChange} /> Active
+            </label>
+            <label>
+              <input type="radio" name="option" value="inactive" checked={dataContact.status === 'inactive'} onChange={handleStatusChange} /> Inactive
+            </label>
           </div>
-        </div>
 
-        {/* Button to save the edited contact data */}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '12px' }}>
-          <button style={{ backgroundColor: '#CCCCCC' }} onClick={handleContactData}>
-            Save Edited Contact
-          </button>
+         
         </div>
+         {/* Button to save the edited contact data */}
+         <div>
+            <button
+              style={{ backgroundColor: '#CCCCCC', color: 'black', height: '40px', width: '100%', borderRadius: '5px', fontSize: '16px' }}
+              onClick={handleContactData}
+            >
+              <b>Save Edited Contact</b>
+            </button>
+          </div>
       </div>
     </div>
   );
