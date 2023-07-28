@@ -19,7 +19,7 @@ export const EDIT_CONTACT=(payload:EditPayloadType)=>{
     }
 }
 
-export const DELETE_CONTACT=(payload:contactData)=>{
+export const DELETE_CONTACT=(payload:number)=>{
     return {
         type:"DELETE_CONTACT",
         payload
