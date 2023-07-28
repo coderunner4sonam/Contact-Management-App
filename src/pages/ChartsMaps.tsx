@@ -1,9 +1,10 @@
 import React from 'react'
+import Dashboard from '../components/Dashboard'
 
 const ChartsMaps:React.FC = () => {
   return (
     <div>
-      chart and maps chart 
+      {/* <Dashboard/> */}
     </div>
   )
 }

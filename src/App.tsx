@@ -17,7 +17,7 @@ function App(): JSX.Element {
           <div style={{width:"15%", border:"1px solid black",height:"89vh",backgroundColor:"#FFFFFF"}}>
             <Sidebar/>
           </div>
-          <div style={{width:"85%", border:"1px solid #3C3CF6",height:"89vh",backgroundColor:"#ECE9E4"}}>
+          <div style={{width:"85%", border:"1px solid #3C3CF6",height:"89vh", backgroundColor:"#ECE9E4"}}>
             <Routes>
               <Route path="/" element={<Contacts />} />
               <Route path="/chartsmaps" element={<ChartsMaps />} />
