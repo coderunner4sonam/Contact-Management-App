@@ -10,7 +10,8 @@ export interface contactData {
 }
 
 interface contactRecordType {
-    contactRecords:contactData[]
+    contactRecords:contactData[],
+    title:string
 }
 
 interface actionType {
@@ -30,7 +31,8 @@ const INITIAL_STATE:contactRecordType = {
             lastName:"Kotangale",
             status:"inactive"
         }
-    ]
+    ],
+    title:"Contact Page"
 } 
 
 export const actionReducer = (state=INITIAL_STATE,action:actionType)=>{
@@ -56,6 +58,11 @@ export const actionReducer = (state=INITIAL_STATE,action:actionType)=>{
             return {
                 ...state,
                 contactRecords:deleteContact
+            }
+        case "CHANGE_TITLE":
+            return {
+                ...state,
+                title:action.payload
             }
         default:
             return state

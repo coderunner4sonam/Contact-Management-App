@@ -30,8 +30,12 @@ export const DELETE_CONTACT=(payload:number)=>{
     }
 }
 
-
-
+export const CHANGE_TITLE=(payload:string)=>{
+    return {
+        type:"CHANGE_TITLE",
+        payload
+    }
+}
 
 
 

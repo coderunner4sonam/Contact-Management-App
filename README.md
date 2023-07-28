@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+Contact Management App - README
+Overview
+The Contact Management App is a simple web application built using React, Redux, and React Router. It allows users to manage their contacts, including creating new contacts, editing existing ones, and deleting contacts. The app also provides a dashboard that displays COVID-19 data for different countries using React Leaflet for map visualization.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+View a list of contacts with their first name, last name, and status (active or inactive).
+Create a new contact by providing a first name, last name, and selecting the status (active or inactive).
+Edit existing contacts to update their first name, last name, or status.
+Delete contacts to remove them from the contact list.
+View a COVID-19 dashboard with worldwide data and data for different countries using React Leaflet for map visualization.
+API Endpoint
+The app uses the Disease.sh API to fetch COVID-19 data. The following API endpoints are used:
 
-## Available Scripts
+https://disease.sh/v3/covid-19/all: Fetches worldwide COVID-19 data.
+https://disease.sh/v3/covid-19/countries: Fetches COVID-19 data for different countries.
+https://disease.sh/v3/covid-19/historical/all?lastdays=all: Fetches historical COVID-19 data for worldwide cases.
+Installation
+Follow the steps below to set up and run the Contact Management App locally:
 
-In the project directory, you can run:
+Clone the repository:
 
-### `npm start`
+git clone https://github.com/your-username/contact-management-app.git
+Navigate to the project folder:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+cd contact-management-app
+Install the dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+npm install
+Create a file named .env in the root of the project and add the following:
 
-### `npm test`
+SKIP_PREFLIGHT_CHECK=true
+This step is necessary to skip the react-scripts version check.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the development server:
 
-### `npm run build`
+npm start
+The app will be accessible at http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Usage
+Contacts Page
+Click on the "Contacts" link in the navigation bar to view the list of contacts.
+To create a new contact, click on the "Create Contact" button. Enter the first name, last name, and select the status (active or inactive) in the form. Click the "Save Contact" button to add the contact to the list.
+To edit an existing contact, click the "Edit" button next to the contact you wish to modify. Update the first name, last name, or status, and then click the "Save Editted Contact" button to save the changes.
+To delete a contact, click the "Delete" button next to the contact you wish to remove. The contact will be permanently deleted from the list.
+COVID-19 Dashboard
+Click on the "Chats and Maps" link in the navigation bar to view the COVID-19 dashboard.
+The dashboard displays a map with markers for each country. Clicking on a marker will show a popup with COVID-19 data for that specific country, including total cases, active cases, recovered cases, and deaths.
+Credits
+The app was created as a practice project and is maintained by Sonam Murarkar.
+License
+MIT License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

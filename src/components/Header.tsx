@@ -1,12 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/store'
 
-// Header component is rendering the header section of a "Contact Page." 
-// It creates a simple header with a centered title, "Contact Page," displayed on a colored background.
+const Header: React.FC = () => {
+  // Access the `title` state from the Redux store using the useSelector hook
+  const state = useSelector((state: RootState) => state)
 
-const Header:React.FC = () => {
   return (
-    <div style={{ display: "flex", justifyContent:"center", alignItems:"center", height:"10vh",border:"1px solid #3C3CF6",backgroundColor:"#306894" }}>
-      <h2 style={{color:"white"}}>Contact Page</h2> 
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", border: "1px solid #3C3CF6", backgroundColor: "#306894" }}>
+      {/* Display the `title` from the Redux store */}
+      <h2 style={{ color: "white" }}>{state.title}</h2>
     </div>
   )
 }
